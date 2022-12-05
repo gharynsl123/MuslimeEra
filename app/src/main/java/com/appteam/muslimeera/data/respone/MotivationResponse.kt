@@ -6,7 +6,6 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class MotivationResponse(
-
 	@field:SerializedName("MotivationResponse")
 	val motivationResponse: List<MotivationResponseItem?>? = null
 ) : Parcelable

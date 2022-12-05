@@ -1,4 +1,4 @@
-package com.appteam.muslimeera
+package com.appteam.muslimeera.ui.onboarding
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,8 +7,6 @@ import com.appteam.muslimeera.databinding.ItemCountainerOnboardingBinding
 import com.bumptech.glide.Glide
 
 class OnBoardingItemAdapter(private val onBoardingItems : List<OnBoardingItem>): RecyclerView.Adapter<OnBoardingItemAdapter.HolderBoarding>() {
-
-
 
     inner class HolderBoarding (val binding: ItemCountainerOnboardingBinding) : RecyclerView.ViewHolder(binding.root)
 

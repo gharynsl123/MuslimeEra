@@ -1,10 +1,12 @@
-package com.appteam.muslimeera
+package com.appteam.muslimeera.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
+import com.appteam.muslimeera.R
+import com.appteam.muslimeera.ui.onboarding.OnBoarding
 
 class SplashScreen : AppCompatActivity() {
 

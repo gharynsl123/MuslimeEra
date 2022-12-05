@@ -1,4 +1,4 @@
-package com.appteam.muslimeera
+package com.appteam.muslimeera.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,8 +13,8 @@ class BacaHadits : AppCompatActivity() {
         setContentView(binding.root)
     }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-        _binding = null
-    }
+//    override fun onBackPressed() {
+//        super.onBackPressed()
+//        _binding = null
+//    }
 }

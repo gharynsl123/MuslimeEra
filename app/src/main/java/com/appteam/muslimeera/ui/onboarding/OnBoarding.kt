@@ -1,20 +1,17 @@
-package com.appteam.muslimeera
+package com.appteam.muslimeera.ui.onboarding
 
 import android.content.Intent
-import android.media.Image
 import android.os.Bundle
-import android.text.Layout
-import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.view.setMargins
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
+import com.appteam.muslimeera.R
 import com.appteam.muslimeera.databinding.ActivityOnBoardingBinding
-import java.util.*
+import com.appteam.muslimeera.ui.main.MainActivity
 
 
 class OnBoarding : AppCompatActivity() {

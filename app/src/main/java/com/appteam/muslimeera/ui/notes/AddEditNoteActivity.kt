@@ -1,12 +1,26 @@
 package com.appteam.muslimeera.ui.notes
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.appteam.muslimeera.R
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
+import com.appteam.muslimeera.data.local.NotesViewModel
+import com.appteam.muslimeera.databinding.ActivityAddEditNoteBinding
 
 class AddEditNoteActivity : AppCompatActivity() {
+
+    private var _binding: ActivityAddEditNoteBinding? = null
+    private val binding get() = _binding as ActivityAddEditNoteBinding
+
+    var noteID = -1
+
+    private var _viewModel : NotesViewModel? = null
+    private val viewModel get() = _viewModel as NotesViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_edit_note)
+        _binding = ActivityAddEditNoteBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        _viewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[NotesViewModel::class.java]
+
     }
 }

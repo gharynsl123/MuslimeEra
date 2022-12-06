@@ -25,11 +25,19 @@ class MainActivity : AppCompatActivity() {
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val mLayoutManager = CenterItemLayoutManager(this, RecyclerView.HORIZONTAL, false)
+        val mAdapter = MotivationAdapter()
+
         _viewModel = ViewModelProvider(this)[MainViewModel::class.java]
 
         viewModel.apply {
             getDataMotive()
-            motiveResponse.observe(this@MainActivity) { setUpListMotivation() }
+            motiveResponse.observe(this@MainActivity) {
+                binding.rvMotivation.apply {
+                    adapter = mAdapter
+                    layoutManager = mLayoutManager
+                }
+            }
             isError.observe(this@MainActivity) { showError(it) }
         }
 
@@ -40,14 +48,6 @@ class MainActivity : AppCompatActivity() {
         binding.btnBacaHadits.setOnClickListener {
             val intent = Intent(this, BacaHadits::class.java)
             startActivity(intent)
-        }
-    }
-
-    private fun setUpListMotivation() {
-        binding.rvMotivation.apply {
-            adapter = MotivationAdapter()
-            val mLayoutManager = CenterItemLayoutManager(context, RecyclerView.HORIZONTAL, false)
-            layoutManager = mLayoutManager
         }
     }
 

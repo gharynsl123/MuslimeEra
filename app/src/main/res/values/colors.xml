@@ -11,4 +11,6 @@
 <!--    Costume Color-->
     <color name="costume_color_primary">#3D5656</color>
     <color name="costume_color_floating_btn">#274545</color>
+    <color name="costume_background_delete">#337070</color>
+
 </resources>

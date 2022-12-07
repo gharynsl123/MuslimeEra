@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
                 binding.rvMotivation.apply {
                     adapter = mAdapter
                     layoutManager = mLayoutManager
+                    mAdapter.setMotivation(it)
                 }
             }
             isError.observe(this@MainActivity) { showError(it) }

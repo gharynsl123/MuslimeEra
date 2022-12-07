@@ -1,4 +1,4 @@
-package com.appteam.muslimeera.data.network
+package com.appteam.muslimeera.data.network.hadits
 
 import com.appteam.muslimeera.data.respone.AllBookResponse
 import io.reactivex.rxjava3.core.Flowable

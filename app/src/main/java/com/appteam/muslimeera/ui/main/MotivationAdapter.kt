@@ -25,8 +25,8 @@ class MotivationAdapter: RecyclerView.Adapter<MotivationAdapter.MyMotiveHolder>(
     override fun onBindViewHolder(holder: MyMotiveHolder, po: Int) {
         val data = listMotivation[po]
         holder.binding.apply {
-            tvMotivation.text = data.motavation
-            Glide.with(backgroundMotivation).load(data.imageBackground).into(backgroundMotivation)
+            tvMotivation.text = data.text
+            Glide.with(backgroundMotivation).load(data.img).into(backgroundMotivation)
         }
     }
 

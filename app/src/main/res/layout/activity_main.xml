@@ -226,6 +226,15 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="30dp"/>
 
+    <Button
+        android:id="@+id/btn_notes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:backgroundTint="@color/costume_color_floating_btn"
+        android:text="notes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNotes" />
 
 
 

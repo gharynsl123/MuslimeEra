@@ -44,10 +44,9 @@ class NotesPage : AppCompatActivity(), HelperFunction.NotesClickDeleteInterface,
 
             addNote.setOnClickListener {
                 startActivity(Intent(this@NotesPage, AddEditNoteActivity::class.java))
+                finish()
             }
         }
-
-
     }
 
     override fun onDeleteIconClick(note: Notes) {

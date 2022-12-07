@@ -5,12 +5,11 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.appteam.muslimeera.data.respone.MotivationResponseItem
+import com.appteam.muslimeera.databinding.ActivityMainBinding
 import com.appteam.muslimeera.ui.BacaHadits
 import com.appteam.muslimeera.ui.BacaQuran
-import com.appteam.muslimeera.databinding.ActivityMainBinding
+import com.appteam.muslimeera.ui.notes.NotesPage
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,6 +38,13 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             isError.observe(this@MainActivity) { showError(it) }
+        }
+
+
+        binding.btnNotes.setOnClickListener {
+            val intent = Intent(this, NotesPage::class.java)
+            startActivity(intent)
+            finish()
         }
 
         binding.btnBacaQuran.setOnClickListener {

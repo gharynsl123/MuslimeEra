@@ -10,6 +10,11 @@ import com.bumptech.glide.Glide
 class MotivationAdapter: RecyclerView.Adapter<MotivationAdapter.MyMotiveHolder>() {
 
     private val listMotivation = ArrayList<MotivationResponseItem>()
+    
+    fun setMotivation(list: List<MotivationResponseItem>){
+        listMotivation.clear()
+        listMotivation.addAll(list)
+    }
 
     inner class MyMotiveHolder(val binding: RowItemMotivationBinding):RecyclerView.ViewHolder(binding.root)
 

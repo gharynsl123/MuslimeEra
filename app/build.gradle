@@ -23,6 +23,7 @@ android {
         debug{
             buildConfigField("String", "MOTIVATION_API", MotivationApi)
             buildConfigField("String", "QURAN_API", QuranUrlApi)
+            buildConfigField("String", "HADITS_API", HaditsApi)
         }
         release {
             minifyEnabled false

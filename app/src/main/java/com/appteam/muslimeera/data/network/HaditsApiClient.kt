@@ -1,6 +1,8 @@
 package com.appteam.muslimeera.data.network
 
 import com.appteam.muslimeera.BuildConfig
+import com.appteam.muslimeera.BuildConfig.HADITS_API
+import com.appteam.muslimeera.data.network.motivation.MotivationApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -8,8 +10,8 @@ import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-class MotivationApiClient {
-    fun getMotiveApiService(): MotivationApiService{
+class HaditsApiClient {
+    fun getMotiveApiService(): MotivationApiService {
         val httpLoggingInterceptor= if (BuildConfig.DEBUG){
             HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
         } else {
@@ -32,7 +34,7 @@ class MotivationApiClient {
             .build()
 
         return Retrofit.Builder()
-            .baseUrl(BuildConfig.MOTIVATION_API)
+            .baseUrl(HADITS_API)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .client(okHttpClient)

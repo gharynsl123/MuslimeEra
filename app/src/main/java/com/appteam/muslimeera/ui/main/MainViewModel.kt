@@ -2,7 +2,7 @@ package com.appteam.muslimeera.ui.main
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.appteam.muslimeera.data.network.MotivationApiClient
+import com.appteam.muslimeera.data.network.motivation.MotivationApiClient
 import com.appteam.muslimeera.data.respone.MotivationResponseItem
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers

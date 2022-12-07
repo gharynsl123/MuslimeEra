@@ -1,4 +1,4 @@
-package com.appteam.muslimeera.data.network
+package com.appteam.muslimeera.data.network.motivation
 
 import com.appteam.muslimeera.data.respone.MotivationResponseItem
 import io.reactivex.rxjava3.core.Flowable

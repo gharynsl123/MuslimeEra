@@ -41,9 +41,10 @@ class NotesPage : AppCompatActivity(), HelperFunction.NotesClickDeleteInterface,
             rvNotes.adapter = mAdapter
             rvNotes.layoutManager =
                 GridLayoutManager(this@NotesPage, 2, RecyclerView.VERTICAL, false)
+            rvNotes.setHasFixedSize(false)
 
             addNote.setOnClickListener {
-                startActivity(Intent(this@NotesPage, AddEditNoteActivity::class.java))
+                startActivity(Intent(this@NotesPage, AENotePage::class.java))
                 finish()
             }
         }
@@ -55,7 +56,7 @@ class NotesPage : AppCompatActivity(), HelperFunction.NotesClickDeleteInterface,
     }
 
     override fun onNoteClick(note: Notes) {
-        val intent = Intent(this@NotesPage, AddEditNoteActivity::class.java)
+        val intent = Intent(this@NotesPage, AENotePage::class.java)
         intent.putExtra("noteType", "Edit")
         intent.putExtra("noteTitle", note.noteTitle)
         intent.putExtra("noteDescription", note.noteDescription)

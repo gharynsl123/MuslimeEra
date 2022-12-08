@@ -8,26 +8,29 @@ import androidx.lifecycle.ViewModelProvider
 import com.appteam.muslimeera.R
 import com.appteam.muslimeera.data.local.Notes
 import com.appteam.muslimeera.data.local.NotesViewModel
-import com.appteam.muslimeera.databinding.ActivityAddEditNoteBinding
-import com.appteam.muslimeera.ui.main.MainActivity
+import com.appteam.muslimeera.databinding.ActivityAenotePageBinding
 import java.text.SimpleDateFormat
 import java.util.*
 
-class AddEditNoteActivity : AppCompatActivity() {
+class AENotePage : AppCompatActivity() {
 
-    private var _binding: ActivityAddEditNoteBinding? = null
-    private val binding get() = _binding as ActivityAddEditNoteBinding
+
+    private var _binding: ActivityAenotePageBinding? = null
+    private val binding get() = _binding as ActivityAenotePageBinding
 
     var noteID = -1
 
     private var _viewModel : NotesViewModel? = null
     private val viewModel get() = _viewModel as NotesViewModel
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        _binding = ActivityAddEditNoteBinding.inflate(layoutInflater)
+        _binding = ActivityAenotePageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         _viewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[NotesViewModel::class.java]
+
 
         val noteType = intent.getStringArrayExtra("noteType")
         if (noteType?.equals("Edit") == true){
@@ -60,8 +63,8 @@ class AddEditNoteActivity : AppCompatActivity() {
                 viewModel.addNote(Notes(noteTitle, noteDescription, currentDate))
                 Toast.makeText(this, "Note Added...", Toast.LENGTH_SHORT).show()
             }
+            startActivity(Intent(applicationContext , NotesPage::class.java))
+            this.finish()
         }
-        startActivity(Intent(applicationContext , MainActivity::class.java))
-        this.finish()
     }
 }

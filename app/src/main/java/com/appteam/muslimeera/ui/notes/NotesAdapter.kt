@@ -16,6 +16,12 @@ class NotesAdapter(
 
     private val allNotes = ArrayList<Notes>()
 
+    fun updateList(newList : List<Notes>){
+        allNotes.clear()
+        allNotes.addAll(newList)
+        notifyDataSetChanged()
+    }
+
     inner class MyNotesAdapter(val binding: GridItemNotesBinding): RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)= MyNotesAdapter(
@@ -39,11 +45,4 @@ class NotesAdapter(
     }
 
     override fun getItemCount(): Int = allNotes.size
-
-    fun updateList(newList : List<Notes>){
-        allNotes.clear()
-        allNotes.addAll(newList)
-        notifyDataSetChanged()
-    }
-
 }

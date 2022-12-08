@@ -20,7 +20,7 @@ class AENotePage : AppCompatActivity() {
 
     var noteID = -1
 
-    private var _viewModel : NotesViewModel? = null
+    private var _viewModel: NotesViewModel? = null
     private val viewModel get() = _viewModel as NotesViewModel
 
 
@@ -29,18 +29,24 @@ class AENotePage : AppCompatActivity() {
         _binding = ActivityAenotePageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        _viewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application))[NotesViewModel::class.java]
+        _viewModel = ViewModelProvider(
+            this,
+            ViewModelProvider.AndroidViewModelFactory.getInstance(application)
+        )[NotesViewModel::class.java]
 
+        val noteType = intent.getStringExtra("noteType")
 
-        val noteType = intent.getStringArrayExtra("noteType")
-        if (noteType?.equals("Edit") == true){
+        if (noteType.equals("Edit")) {
+
             val noteTitle = intent.getStringExtra("noteTitle")
-            val noteDesc = intent.getStringExtra("noteDescription")
+            val  noteDesc = intent.getStringExtra("noteDescription")
+
             noteID = intent.getIntExtra("noteID", -1)
+
             binding.btnAddUpdate.setImageResource(R.drawable.ic_update)
             binding.edtNotesTitle.setText(noteTitle)
             binding.edtNotesDescription.setText(noteDesc)
-        }else{
+        } else {
             binding.btnAddUpdate.setImageResource(R.drawable.ic_add)
         }
 
@@ -48,22 +54,22 @@ class AENotePage : AppCompatActivity() {
             val noteTitle = binding.edtNotesTitle.text.toString()
             val noteDescription = binding.edtNotesDescription.text.toString()
 
-            if (noteType?.equals("Edit") == true){
-                if (noteTitle.isNotEmpty() && noteDescription.isNotEmpty()){
+            if (noteType?.equals("Edit") == true) {
+                if (noteTitle.isNotEmpty() && noteDescription.isNotEmpty()) {
                     val sdf = SimpleDateFormat("dd MMM, yyyy - HH:mm")
-                    val currentDate :String = sdf.format(Date())
+                    val currentDate: String = sdf.format(Date())
                     val updateNote = Notes(noteTitle, noteDescription, currentDate)
                     updateNote.id = noteID
                     viewModel.updateNote(updateNote)
-                    Toast.makeText(this, "Note Update...", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Note Update...", Toast.LENGTH_LONG).show()
                 }
-            }else{
+            } else {
                 val sdf = SimpleDateFormat("dd MMM, yyyy - HH:mm")
-                val currentDate :String = sdf.format(Date())
+                val currentDate: String = sdf.format(Date())
                 viewModel.addNote(Notes(noteTitle, noteDescription, currentDate))
-                Toast.makeText(this, "Note Added...", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Note Added...", Toast.LENGTH_LONG).show()
             }
-            startActivity(Intent(applicationContext , NotesPage::class.java))
+            startActivity(Intent(applicationContext, NotesPage::class.java))
             this.finish()
         }
     }

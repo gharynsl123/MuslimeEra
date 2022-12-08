@@ -45,22 +45,23 @@ class NotesPage : AppCompatActivity(), HelperFunction.NotesClickDeleteInterface,
 
             addNote.setOnClickListener {
                 startActivity(Intent(this@NotesPage, AENotePage::class.java))
-                finish()
             }
         }
     }
 
     override fun onDeleteIconClick(note: Notes) {
         viewModel.deleteNote(note)
-        Toast.makeText(this, "${note.noteTitle} Deleted", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "${note.noteTitle} Deleted", Toast.LENGTH_LONG).show()
     }
 
     override fun onNoteClick(note: Notes) {
         val intent = Intent(this@NotesPage, AENotePage::class.java)
-        intent.putExtra("noteType", "Edit")
-        intent.putExtra("noteTitle", note.noteTitle)
-        intent.putExtra("noteDescription", note.noteDescription)
-        intent.putExtra("noteID", note.id)
+        intent.apply {
+            putExtra("noteType", "Edit")
+            putExtra("noteTitle", note.noteTitle)
+            intent.putExtra("noteDescription", note.noteDescription)
+            intent.putExtra("noteID", note.id)
+        }
         startActivity(intent)
     }
 }

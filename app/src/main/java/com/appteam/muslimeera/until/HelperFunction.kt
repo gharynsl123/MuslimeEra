@@ -10,4 +10,6 @@ object HelperFunction {
     interface NotesClickInterface{
         fun onNoteClick(note: Notes)
     }
+
+
 }

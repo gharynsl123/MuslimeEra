@@ -12,10 +12,19 @@ class NotesViewModel(application: Application): AndroidViewModel(application) {
     val repository: NotesRepository
 
     init {
-        val dao = NotesDB.getDatabase(application).getNotesDao()
+        val dao = NotesDB.getDatabase(application).notesDao()
         repository = NotesRepository(dao)
         allNotes = repository.allNotes
     }
+
+    //funsi ini yang akang di gunakan oleh view ketika input data dan dikirimkan ke dalam repository
+    fun insertData(notes: Notes) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.insert(notes)
+        }
+    }
+
+    fun searchByQuery(query: String): LiveData<List<Notes>> = repository.searchByQuery(query)
 
     fun deleteNote(notes: Notes) = viewModelScope.launch (Dispatchers.IO) {
         repository.delete(notes)

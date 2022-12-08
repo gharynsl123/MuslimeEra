@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearSnapHelper
+import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.appteam.muslimeera.databinding.ActivityMainBinding
 import com.appteam.muslimeera.ui.BacaHadits
@@ -37,8 +37,7 @@ class MainActivity : AppCompatActivity() {
                     adapter = mAdapter
                     layoutManager = mLayoutManager
                     mAdapter.setMotivation(it)
-
-                    LinearSnapHelper().attachToRecyclerView(this)
+                    PagerSnapHelper().attachToRecyclerView(this)
                 }
             }
             isError.observe(this@MainActivity) { showError(it) }

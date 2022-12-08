@@ -5,26 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/costume_color_primary"
-    android:paddingHorizontal="30dp"
+    android:paddingHorizontal="20dp"
     tools:context=".ui.notes.NotesPage">
 
     <ImageView
         android:id="@+id/btn_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/btn_back_img"
         android:padding="10dp"
         android:src="@drawable/ic_rounda_rrow_left"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
 
     <TextView
         android:id="@+id/tvGreetingNotes"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/sfpro_medium"
         android:text="Selamat Datang, Gharyn"
         android:textColor="@color/white"
@@ -46,6 +47,7 @@
         app:layout_constraintStart_toEndOf="@+id/btn_back"
         app:layout_constraintTop_toBottomOf="@id/tvGreetingNotes" />
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvNotes"
         android:layout_width="match_parent"
@@ -61,9 +63,10 @@
         android:layout_marginBottom="35dp"
         android:backgroundTint="@color/costume_color_floating_btn"
         android:src="@drawable/ic_add"
+        android:tint="@color/white"
+        app:backgroundTint="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:tint="@color/white" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

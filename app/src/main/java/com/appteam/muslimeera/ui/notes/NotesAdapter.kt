@@ -14,7 +14,7 @@ class NotesAdapter(
     val notesClickDeleteInterface: HelperFunction.NotesClickDeleteInterface
 ) : RecyclerView.Adapter<NotesAdapter.MyNotesAdapter>(){
 
-    private val allNotes = ArrayList<Notes>()
+    val allNotes = ArrayList<Notes>()
 
     fun updateList(newList : List<Notes>){
         allNotes.clear()

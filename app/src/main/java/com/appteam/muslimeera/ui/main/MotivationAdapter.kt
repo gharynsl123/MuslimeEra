@@ -31,4 +31,5 @@ class MotivationAdapter: RecyclerView.Adapter<MotivationAdapter.MyMotiveHolder>(
     }
 
     override fun getItemCount(): Int = listMotivation.size
+
 }

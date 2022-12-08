@@ -18,7 +18,7 @@
         <activity
             android:name=".ui.notes.NotesPage"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:theme="@style/Theme.MuslimeEra" />
         <activity
             android:name=".ui.BacaHadits"
             android:exported="true"

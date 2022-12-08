@@ -18,7 +18,7 @@ class OnBoarding : AppCompatActivity() {
     private var _binding: ActivityOnBoardingBinding? = null
     private val binding get() = _binding as ActivityOnBoardingBinding
 
-    val onBoardingAdapter = OnBoardingItemAdapter(
+    private val onBoardingAdapter = OnBoardingItemAdapter(
         listOf(
             OnBoardingItem(
                 onBoardingImages = R.drawable.kelebihan,
@@ -45,21 +45,24 @@ class OnBoarding : AppCompatActivity() {
     }
 
     private fun setOnBoardingItems() {
-        binding.onBoardingViewPage.adapter = onBoardingAdapter
-        binding.onBoardingViewPage.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
-            override fun onPageSelected(position: Int) {
-                super.onPageSelected(position)
-                setUpCurrentIndicator(position)
-            }
-        })
-        (binding.onBoardingViewPage.getChildAt(0) as RecyclerView).overScrollMode =
-            RecyclerView.OVER_SCROLL_NEVER
+        binding.apply {
+            onBoardingViewPage.adapter = onBoardingAdapter
+            onBoardingViewPage.registerOnPageChangeCallback(object :
+                ViewPager2.OnPageChangeCallback() {
+                override fun onPageSelected(position: Int) {
+                    super.onPageSelected(position)
+                    setUpCurrentIndicator(position)
+                }
+            })
+            (binding.onBoardingViewPage.getChildAt(0) as RecyclerView).overScrollMode =
+                RecyclerView.OVER_SCROLL_NEVER
 
-        binding.btnNextOnboard.setOnClickListener {
-            if (binding.onBoardingViewPage.currentItem + 1 < onBoardingAdapter.itemCount){
-                binding.onBoardingViewPage.currentItem += 1
-            }else{
-                navigateToHomePage()
+            btnNextOnboard.setOnClickListener {
+                if (binding.onBoardingViewPage.currentItem + 1 < onBoardingAdapter.itemCount) {
+                    binding.onBoardingViewPage.currentItem += 1
+                } else {
+                    navigateToHomePage()
+                }
             }
         }
     }
@@ -70,7 +73,6 @@ class OnBoarding : AppCompatActivity() {
     }
 
     private fun setUpIndicator() {
-//        binding.indicatorBoarding
         val indicator = arrayOfNulls<ImageView>(onBoardingAdapter.itemCount)
         val layoutParams: LinearLayout.LayoutParams =
             LinearLayout.LayoutParams(WRAP_CONTENT, WRAP_CONTENT)

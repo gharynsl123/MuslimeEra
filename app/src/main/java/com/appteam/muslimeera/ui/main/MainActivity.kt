@@ -44,20 +44,20 @@ class MainActivity : AppCompatActivity() {
             isError.observe(this@MainActivity) { showError(it) }
         }
 
-
-        binding.btnNotes.setOnClickListener {
-            val intent = Intent(this, NotesPage::class.java)
-            startActivity(intent)
-            finish()
-        }
-
-        binding.btnBacaQuran.setOnClickListener {
-            val intent = Intent(this, BacaQuran::class.java)
-            startActivity(intent)
-        }
-        binding.btnBacaHadits.setOnClickListener {
-            val intent = Intent(this, BacaHadits::class.java)
-            startActivity(intent)
+        binding.apply {
+            btnNotes.setOnClickListener {
+                val intent = Intent(this@MainActivity, NotesPage::class.java)
+                startActivity(intent)
+                finish()
+            }
+            btnBacaQuran.setOnClickListener {
+                val intent = Intent(this@MainActivity, BacaQuran::class.java)
+                startActivity(intent)
+            }
+            btnBacaHadits.setOnClickListener {
+                val intent = Intent(this@MainActivity, BacaHadits::class.java)
+                startActivity(intent)
+            }
         }
     }
 

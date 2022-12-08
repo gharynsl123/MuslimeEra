@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.appteam.muslimeera.data.local.Notes
 import com.appteam.muslimeera.data.local.NotesViewModel
 import com.appteam.muslimeera.databinding.ActivityNotesPageBinding
+import com.appteam.muslimeera.ui.main.MainActivity
 import com.appteam.muslimeera.until.HelperFunction
 
 class NotesPage : AppCompatActivity(), HelperFunction.NotesClickDeleteInterface,
@@ -37,6 +38,7 @@ class NotesPage : AppCompatActivity(), HelperFunction.NotesClickDeleteInterface,
                 mAdapter.updateList(it)
             }
         })
+
         binding.apply {
             rvNotes.adapter = mAdapter
             rvNotes.layoutManager =
@@ -45,6 +47,11 @@ class NotesPage : AppCompatActivity(), HelperFunction.NotesClickDeleteInterface,
 
             addNote.setOnClickListener {
                 startActivity(Intent(this@NotesPage, AENotePage::class.java))
+            }
+
+            btnBack.setOnClickListener {
+                startActivity(Intent(this@NotesPage, MainActivity::class.java))
+                finish()
             }
         }
     }

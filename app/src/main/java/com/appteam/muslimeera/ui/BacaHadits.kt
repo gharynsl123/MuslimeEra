@@ -1,7 +1,7 @@
 package com.appteam.muslimeera.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.appteam.muslimeera.databinding.ActivityBacaQuranBinding
 
 class BacaHadits : AppCompatActivity() {
@@ -11,6 +11,8 @@ class BacaHadits : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityBacaQuranBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        supportActionBar?.hide()
     }
 
 //    override fun onBackPressed() {

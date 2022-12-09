@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="300dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="8dp"
-    android:layout_height="150dp">
+    android:layout_width="300dp"
+    android:layout_height="150dp"
+    android:layout_marginStart="30dp"
+    app:cardCornerRadius="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -13,7 +14,7 @@
             android:id="@+id/backgroundMotivation"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:src="#08c"
+            android:background="@android:color/darker_gray"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -23,17 +24,15 @@
         <TextView
             android:id="@+id/tvMotivation"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#79000000"
-            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:background="#8A8A8A"
             android:fontFamily="@font/sfpro_bold"
-            android:padding="20dp"
-            android:text="tiada hari tanpa inbadah"
+            android:gravity="center"
+            android:padding="10dp"
             android:textColor="@color/white"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/backgroundMotivation"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,7 @@ package com.appteam.muslimeera.ui.notes
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.appteam.muslimeera.data.local.Notes
 import com.appteam.muslimeera.databinding.GridItemNotesBinding
@@ -17,9 +18,12 @@ class NotesAdapter(
     val allNotes = ArrayList<Notes>()
 
     fun updateList(newList : List<Notes>){
+        if (newList == null) return
+        val diffCalback = DiffCallback(allNotes, newList)
+        val diffCallbackResult = DiffUtil.calculateDiff(diffCalback)
         allNotes.clear()
         allNotes.addAll(newList)
-        notifyDataSetChanged()
+        diffCallbackResult.dispatchUpdatesTo(this)
     }
 
     inner class MyNotesAdapter(val binding: GridItemNotesBinding): RecyclerView.ViewHolder(binding.root)

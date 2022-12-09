@@ -28,14 +28,14 @@ class NotesPage : AppCompatActivity(), HelperFunction.NotesClickDeleteInterface,
     private var _viewModel: NotesViewModel? = null
     private val viewModel get() = _viewModel as NotesViewModel
 
+    val mAdapter = NotesAdapter(this, this, this)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityNotesPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         supportActionBar?.hide()
-
-        val mAdapter = NotesAdapter(this, this, this)
 
         _viewModel = ViewModelProvider(
             this,
@@ -97,7 +97,7 @@ class NotesPage : AppCompatActivity(), HelperFunction.NotesClickDeleteInterface,
             }
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                val deletedItem = NotesAdapter(this@NotesPage, this@NotesPage, this@NotesPage).allNotes[viewHolder.adapterPosition]
+                val deletedItem = mAdapter.allNotes[viewHolder.adapterPosition]
                 viewModel.deleteNote(deletedItem)
                 restorData(viewHolder.itemView, deletedItem)
             }
@@ -111,10 +111,13 @@ class NotesPage : AppCompatActivity(), HelperFunction.NotesClickDeleteInterface,
             view, "Deleted: '${item.noteTitle}'",
             Snackbar.LENGTH_LONG
         )
-        snackBar.setTextColor(ContextCompat.getColor(view.context, R.color.black))
-        snackBar.setAction("Undo") {
-            viewModel.insertData(item)
+        snackBar.apply {
+            setBackgroundTint(ContextCompat.getColor(view.context, R.color.costume_color_floating_btn))
+            setTextColor(ContextCompat.getColor(view.context, R.color.white))
+            setAction("Undo") {
+                viewModel.insertData(item)
+            }
+            show()
         }
-        snackBar.show()
     }
 }

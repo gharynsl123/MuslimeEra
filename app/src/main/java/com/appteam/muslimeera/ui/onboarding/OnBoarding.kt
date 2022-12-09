@@ -36,6 +36,9 @@ class OnBoarding : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        supportActionBar?.hide()
+
         _binding = ActivityOnBoardingBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setOnBoardingItems()

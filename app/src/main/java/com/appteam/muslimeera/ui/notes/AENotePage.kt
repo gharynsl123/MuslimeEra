@@ -31,6 +31,8 @@ class AENotePage : AppCompatActivity() {
         _binding = ActivityAenotePageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.hide()
+
         _viewModel = ViewModelProvider(
             this,
             ViewModelProvider.AndroidViewModelFactory.getInstance(application)

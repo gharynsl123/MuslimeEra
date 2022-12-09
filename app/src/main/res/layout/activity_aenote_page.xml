@@ -4,10 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     tools:context=".ui.notes.AENotePage">
 
-    <Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarCustome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,7 +21,7 @@
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"/>
-    </Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     <EditText
         android:id="@+id/edtNotesTitle"

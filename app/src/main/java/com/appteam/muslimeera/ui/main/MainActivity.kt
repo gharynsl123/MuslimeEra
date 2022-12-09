@@ -3,6 +3,7 @@ package com.appteam.muslimeera.ui.main
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.PagerSnapHelper
@@ -25,6 +26,8 @@ class MainActivity : AppCompatActivity() {
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.hide()
+
         val mLayoutManager = CenterItemLayoutManager(this, RecyclerView.HORIZONTAL, false)
         val mAdapter = MotivationAdapter()
 
@@ -40,6 +43,7 @@ class MainActivity : AppCompatActivity() {
                     PagerSnapHelper().attachToRecyclerView(this)
                 }
             }
+            isLoading.observe(this@MainActivity) { shimmerLayout(it) }
             isError.observe(this@MainActivity) { showError(it) }
         }
 
@@ -56,6 +60,20 @@ class MainActivity : AppCompatActivity() {
             btnBacaHadits.setOnClickListener {
                 val intent = Intent(this@MainActivity, BacaHadits::class.java)
                 startActivity(intent)
+            }
+        }
+    }
+
+    private fun shimmerLayout(isLoading: Boolean?) {
+        binding.apply {
+            if (isLoading == true) {
+                shimmerViewContainer.startShimmer()
+                shimmerViewContainer.visibility = View.VISIBLE
+                rvMotivation.visibility = View.GONE
+            } else {
+                shimmerViewContainer.stopShimmer()
+                shimmerViewContainer.visibility = View.GONE
+                rvMotivation.visibility = View.VISIBLE
             }
         }
     }

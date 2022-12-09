@@ -1,9 +1,10 @@
-package com.appteam.muslimeera.ui.notes
+package com.appteam.muslimeera.ui.notes.component
 
 import androidx.recyclerview.widget.DiffUtil
 import com.appteam.muslimeera.data.local.Notes
 
-class DiffCallback(private val oldList: List<Notes>, private val newList: List<Notes>) : DiffUtil.Callback() {
+class DiffCallback(private val oldList: List<Notes>, private val newList: List<Notes>) :
+    DiffUtil.Callback() {
     override fun getOldListSize() = oldList.size
 
     override fun getNewListSize() = newList.size

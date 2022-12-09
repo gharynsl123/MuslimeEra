@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.notes.AENotePage">
+    tools:context=".ui.aenote.AENotePage">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarCustome"
@@ -20,7 +20,7 @@
             android:text="MuslimEra"
             android:textColor="@color/white"
             android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
     </androidx.appcompat.widget.Toolbar>
 
     <EditText
@@ -41,7 +41,6 @@
     <EditText
         android:id="@+id/edtNotesDescription"
         android:layout_width="match_parent"
-        android:importantForAutofill="no"
         android:layout_height="0dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="25dp"
@@ -49,9 +48,10 @@
         android:background="@drawable/background_notes"
         android:fontFamily="@font/sfpro_bold"
         android:gravity="start|top"
-        android:padding="15dp"
         android:hint="Enter Your Note"
+        android:importantForAutofill="no"
         android:inputType="textMultiLine|textNoSuggestions|text"
+        android:padding="15dp"
         android:singleLine="false"
         android:textColor="@color/black"
         android:textColorHint="@color/black"

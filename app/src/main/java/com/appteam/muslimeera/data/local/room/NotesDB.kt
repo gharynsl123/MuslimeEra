@@ -1,9 +1,10 @@
-package com.appteam.muslimeera.data.local
+package com.appteam.muslimeera.data.local.room
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.appteam.muslimeera.data.local.Notes
 
 
 @Database(entities = [Notes::class], version = 2, exportSchema = false)

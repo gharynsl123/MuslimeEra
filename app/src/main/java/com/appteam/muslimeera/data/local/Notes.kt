@@ -11,5 +11,6 @@ class Notes(
     @ColumnInfo(name = "description") val noteDescription: String,
     @ColumnInfo(name = "timestap") val noteTime: String
 ) {
-    @PrimaryKey(autoGenerate = true) var id = 0
+    @PrimaryKey(autoGenerate = true)
+    var id = 0
 }

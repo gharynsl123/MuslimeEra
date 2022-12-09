@@ -14,9 +14,10 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.appteam.muslimeera.R
 import com.appteam.muslimeera.data.local.Notes
-import com.appteam.muslimeera.data.local.NotesViewModel
 import com.appteam.muslimeera.databinding.ActivityNotesPageBinding
+import com.appteam.muslimeera.ui.aenote.AENotePage
 import com.appteam.muslimeera.ui.main.MainActivity
+import com.appteam.muslimeera.ui.notes.component.NotesViewModel
 import com.appteam.muslimeera.until.HelperFunction
 import com.google.android.material.snackbar.Snackbar
 
@@ -112,7 +113,12 @@ class NotesPage : AppCompatActivity(), HelperFunction.NotesClickDeleteInterface,
             Snackbar.LENGTH_LONG
         )
         snackBar.apply {
-            setBackgroundTint(ContextCompat.getColor(view.context, R.color.costume_color_floating_btn))
+            setBackgroundTint(
+                ContextCompat.getColor(
+                    view.context,
+                    R.color.costume_color_floating_btn
+                )
+            )
             setTextColor(ContextCompat.getColor(view.context, R.color.white))
             setAction("Undo") {
                 viewModel.insertData(item)

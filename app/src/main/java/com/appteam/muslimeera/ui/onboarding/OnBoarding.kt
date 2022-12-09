@@ -82,7 +82,7 @@ class OnBoarding : AppCompatActivity() {
         layoutParams.setMargins(8, 0, 8, 0)
         for (i in indicator.indices) {
             indicator[i] = ImageView(applicationContext)
-            indicator[i]?.let{
+            indicator[i]?.let {
                 it.setImageDrawable(
                     ContextCompat.getDrawable(
                         applicationContext, R.drawable.indicator_inactive_background
@@ -94,17 +94,17 @@ class OnBoarding : AppCompatActivity() {
         }
     }
 
-    private fun setUpCurrentIndicator(position: Int){
+    private fun setUpCurrentIndicator(position: Int) {
         val childCount = binding.indicatorBoarding.childCount
-        for(i in 0 until childCount){
+        for (i in 0 until childCount) {
             val imageView = binding.indicatorBoarding.getChildAt(i) as ImageView
-            if (i == position){
+            if (i == position) {
                 imageView.setImageDrawable(
                     ContextCompat.getDrawable(
                         applicationContext, R.drawable.indicator_active_background
                     )
                 )
-            }else{
+            } else {
                 imageView.setImageDrawable(
                     ContextCompat.getDrawable(
                         applicationContext, R.drawable.indicator_inactive_background

@@ -11,11 +11,12 @@ interface HaditsApiService {
 
     @GET("books/{id}?range=0-300")
     fun getTabs(
-        @Path("id") id:String
+        @Path("id") id: String
     )
+
     @GET("books/{id}/{number}")
     fun getSpecific(
-        @Path("id") id:String,
-        @Path("number") number:Int
+        @Path("id") id: String,
+        @Path("number") number: Int
     )
 }

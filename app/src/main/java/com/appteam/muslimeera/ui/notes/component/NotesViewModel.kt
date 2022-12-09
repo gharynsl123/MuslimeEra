@@ -1,14 +1,17 @@
-package com.appteam.muslimeera.data.local
+package com.appteam.muslimeera.ui.notes.component
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import com.appteam.muslimeera.data.local.Notes
+import com.appteam.muslimeera.data.local.NotesRepository
+import com.appteam.muslimeera.data.local.room.NotesDB
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class NotesViewModel(application: Application): AndroidViewModel(application) {
-    val allNotes : LiveData<List<Notes>>
+class NotesViewModel(application: Application) : AndroidViewModel(application) {
+    val allNotes: LiveData<List<Notes>>
     val repository: NotesRepository
 
     init {
@@ -26,7 +29,7 @@ class NotesViewModel(application: Application): AndroidViewModel(application) {
 
     fun searchByQuery(query: String): LiveData<List<Notes>> = repository.searchByQuery(query)
 
-    fun deleteNote(notes: Notes) = viewModelScope.launch (Dispatchers.IO) {
+    fun deleteNote(notes: Notes) = viewModelScope.launch(Dispatchers.IO) {
         repository.delete(notes)
     }
 
@@ -34,7 +37,7 @@ class NotesViewModel(application: Application): AndroidViewModel(application) {
         repository.update(notes)
     }
 
-    fun addNote(notes: Notes) = viewModelScope.launch (Dispatchers.IO) {
+    fun addNote(notes: Notes) = viewModelScope.launch(Dispatchers.IO) {
         repository.insert(notes)
     }
 

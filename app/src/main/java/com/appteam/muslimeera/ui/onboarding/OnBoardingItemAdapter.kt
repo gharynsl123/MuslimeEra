@@ -6,11 +6,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.appteam.muslimeera.databinding.ItemCountainerOnboardingBinding
 import com.bumptech.glide.Glide
 
-class OnBoardingItemAdapter(private val onBoardingItems : List<OnBoardingItem>): RecyclerView.Adapter<OnBoardingItemAdapter.HolderBoarding>() {
+class OnBoardingItemAdapter(private val onBoardingItems: List<OnBoardingItem>) :
+    RecyclerView.Adapter<OnBoardingItemAdapter.HolderBoarding>() {
 
-    inner class HolderBoarding (val binding: ItemCountainerOnboardingBinding) : RecyclerView.ViewHolder(binding.root)
+    inner class HolderBoarding(val binding: ItemCountainerOnboardingBinding) :
+        RecyclerView.ViewHolder(binding.root)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)= HolderBoarding(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = HolderBoarding(
         ItemCountainerOnboardingBinding.inflate(LayoutInflater.from(parent.context), parent, false)
     )
 

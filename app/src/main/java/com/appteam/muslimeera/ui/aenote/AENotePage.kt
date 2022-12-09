@@ -1,4 +1,4 @@
-package com.appteam.muslimeera.ui.notes
+package com.appteam.muslimeera.ui.aenote
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,13 +7,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.appteam.muslimeera.R
 import com.appteam.muslimeera.data.local.Notes
-import com.appteam.muslimeera.data.local.NotesViewModel
 import com.appteam.muslimeera.databinding.ActivityAenotePageBinding
+import com.appteam.muslimeera.ui.notes.NotesPage
+import com.appteam.muslimeera.ui.notes.component.NotesViewModel
 import java.text.SimpleDateFormat
 import java.util.*
 
 class AENotePage : AppCompatActivity() {
-
 
     private var _binding: ActivityAenotePageBinding? = null
     private val binding get() = _binding as ActivityAenotePageBinding
@@ -22,9 +22,6 @@ class AENotePage : AppCompatActivity() {
 
     private var _viewModel: NotesViewModel? = null
     private val viewModel get() = _viewModel as NotesViewModel
-
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,7 +62,11 @@ class AENotePage : AppCompatActivity() {
                         edtNotesTitle.error = "Please Fill Field"
                     }
                     edtNotesDescription.text.isEmpty() -> {
-                        Toast.makeText(this@AENotePage, "Your Notes Is still empty", Toast.LENGTH_LONG).show()
+                        Toast.makeText(
+                            this@AENotePage,
+                            "Your Notes Is still empty",
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
                     else -> {
                         if (noteType?.equals("Edit") == true) {
@@ -75,19 +76,22 @@ class AENotePage : AppCompatActivity() {
                                 val updateNote = Notes(noteTitle, noteDescription, currentDate)
                                 updateNote.id = noteID
                                 viewModel.updateNote(updateNote)
-                                Toast.makeText(this@AENotePage, "Note Update...", Toast.LENGTH_LONG).show()
+                                Toast.makeText(this@AENotePage, "Note Update...", Toast.LENGTH_LONG)
+                                    .show()
                             }
                         } else {
                             val sdf = SimpleDateFormat("dd MMM, yyyy - HH:mm")
                             val currentDate: String = sdf.format(Date())
                             viewModel.addNote(Notes(noteTitle, noteDescription, currentDate))
-                            Toast.makeText(this@AENotePage, "Note Added...", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this@AENotePage, "Note Added...", Toast.LENGTH_LONG)
+                                .show()
                         }
                         startActivity(Intent(this@AENotePage, NotesPage::class.java))
                         this@AENotePage.finish()
                     }
                 }
-            }
+            }// EDN OF BTN ADD UPDATE
+
             btnCancel.setOnClickListener {
                 Toast.makeText(this@AENotePage, "Noted Canceled", Toast.LENGTH_LONG).show()
                 startActivity(Intent(this@AENotePage, NotesPage::class.java))
@@ -95,6 +99,5 @@ class AENotePage : AppCompatActivity() {
             }
 
         }//END OF BINDING
-
     }//END OF ON CREATE
 }

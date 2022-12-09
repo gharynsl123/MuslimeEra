@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="300dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="8dp"
-    android:layout_height="150dp">
+    android:layout_width="300dp"
+    android:layout_height="150dp"
+    app:cardCornerRadius="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -13,8 +13,8 @@
             android:id="@+id/backgroundMotivation"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:src="#08c"
             android:scaleType="centerCrop"
+            android:src="#08c"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -25,8 +25,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#79000000"
-            android:gravity="center"
             android:fontFamily="@font/sfpro_bold"
+            android:gravity="center"
             android:padding="20dp"
             android:text="tiada hari tanpa inbadah"
             android:textColor="@color/white"

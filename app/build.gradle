@@ -20,7 +20,7 @@ android {
     }
 
     buildTypes {
-        debug{
+        debug {
             buildConfigField("String", "MOTIVATION_API", MotivationApi)
             buildConfigField("String", "QURAN_API", QuranUrlApi)
             buildConfigField("String", "HADITS_API", HaditsApi)
@@ -40,7 +40,7 @@ android {
     packagingOptions {
         exclude 'META-INF/atomicfu.kotlin_module'
     }
-    buildFeatures{
+    buildFeatures {
         viewBinding true
     }
 }

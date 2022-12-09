@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit
 
 class MotivationApiClient {
     fun getMotiveApiService(): MotivationApiService {
-        val httpLoggingInterceptor= if (BuildConfig.DEBUG){
+        val httpLoggingInterceptor = if (BuildConfig.DEBUG) {
             HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
         } else {
             HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.NONE)

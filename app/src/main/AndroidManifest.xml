@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.appteam.muslimeera" >
+    package="com.appteam.muslimeera">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -10,11 +10,11 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/logo_app"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MuslimeEra" >
+        android:theme="@style/Theme.MuslimeEra">
         <activity
-            android:name=".ui.notes.AENotePage"
+            android:name=".ui.aenote.AENotePage"
             android:exported="true"
-            android:theme="@style/Theme.MuslimeEra"/>
+            android:theme="@style/Theme.MuslimeEra" />
         <activity
             android:name=".ui.notes.NotesPage"
             android:exported="true"
@@ -22,15 +22,15 @@
         <activity
             android:name=".ui.BacaHadits"
             android:exported="true"
-            android:theme="@style/Theme.MuslimeEra"/>
+            android:theme="@style/Theme.MuslimeEra" />
         <activity
             android:name=".ui.BacaQuran"
             android:exported="true"
-            android:theme="@style/Theme.MuslimeEra"/>
+            android:theme="@style/Theme.MuslimeEra" />
         <activity
             android:name=".ui.SplashScreen"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.NoActionBar" >
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -40,11 +40,11 @@
         <activity
             android:name=".ui.onboarding.OnBoarding"
             android:exported="true"
-            android:theme="@style/Theme.MuslimeEra"/>
+            android:theme="@style/Theme.MuslimeEra" />
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.MuslimeEra"/>
+            android:theme="@style/Theme.MuslimeEra" />
     </application>
 
 </manifest>

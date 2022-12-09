@@ -8,19 +8,26 @@
         <entry key="app/src/main/res/drawable-v24/indicator_active_background.xml" value="0.1495" />
         <entry key="app/src/main/res/drawable/background_card.xml" value="0.1565" />
         <entry key="app/src/main/res/drawable/background_delete.xml" value="0.1565" />
+        <entry key="app/src/main/res/drawable/background_edt.xml" value="0.1565" />
         <entry key="app/src/main/res/drawable/background_notes.xml" value="0.1565" />
         <entry key="app/src/main/res/drawable/btn_back_img.xml" value="0.1565" />
         <entry key="app/src/main/res/drawable/ic_add.xml" value="0.1565" />
+        <entry key="app/src/main/res/drawable/ic_baseline_account_box_24.xml" value="0.1565" />
+        <entry key="app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.1565" />
+        <entry key="app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.1565" />
+        <entry key="app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.1565" />
         <entry key="app/src/main/res/drawable/icon_next.xml" value="0.1565" />
         <entry key="app/src/main/res/drawable/indicator_onboarding_background.xml" value="0.1495" />
         <entry key="app/src/main/res/layout/activity_add_edit_note.xml" value="0.1858108108108108" />
         <entry key="app/src/main/res/layout/activity_aenote_page.xml" value="0.20182008485536318" />
         <entry key="app/src/main/res/layout/activity_baca_hadits.xml" value="0.20334320068359377" />
         <entry key="app/src/main/res/layout/activity_baca_quran.xml" value="0.1858108108108108" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.1858108108108108" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15048828125" />
         <entry key="app/src/main/res/layout/activity_notes.xml" value="0.1858108108108108" />
         <entry key="app/src/main/res/layout/activity_notes_page.xml" value="0.24731903076171877" />
         <entry key="app/src/main/res/layout/activity_on_boarding.xml" value="0.2864583333333333" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.1858108108108108" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
         <entry key="app/src/main/res/layout/card_list_hadits.xml" value="0.23514322359982898" />
         <entry key="app/src/main/res/layout/costume_dialog.xml" value="0.1858108108108108" />

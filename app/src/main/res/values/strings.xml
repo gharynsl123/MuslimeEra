@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">MuslimeEra</string>
     <string name="string_misal">Lorem Ipsum Dolar si Amet. Dolor Kumaicu. Acsi Laikuma Khap</string>
+    <string name="tvsublogin">Login if you already have an account</string>
+    <string name="tvlogin">Login to app</string>
+    <string name="tvRegister">Register</string>
+    <string name="tvsubresgiter">Resgiter for making an account</string>
 </resources>

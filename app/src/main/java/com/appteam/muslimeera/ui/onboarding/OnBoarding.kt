@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.appteam.muslimeera.R
 import com.appteam.muslimeera.databinding.ActivityOnBoardingBinding
-import com.appteam.muslimeera.ui.main.MainActivity
+import com.appteam.muslimeera.ui.LoginActivity
 
 
 class OnBoarding : AppCompatActivity() {
@@ -71,7 +71,7 @@ class OnBoarding : AppCompatActivity() {
     }
 
     private fun navigateToHomePage() {
-        startActivity(Intent(applicationContext, MainActivity::class.java))
+        startActivity(Intent(applicationContext, LoginActivity::class.java))
         finish()
     }
 

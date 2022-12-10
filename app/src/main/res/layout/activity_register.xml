@@ -31,12 +31,28 @@
         app:layout_constraintTop_toBottomOf="@id/tvLogin" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilTitle"
+        android:id="@+id/til_fullName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:hint="Your email or Username"
+        android:layout_marginTop="60dp"
+        android:hint="Your Username"
         app:layout_constraintTop_toBottomOf="@id/tvSubTitle"
+        app:startIconDrawable="@drawable/ic_baseline_account_circle_24">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_fullName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:hint="Your email"
+        app:layout_constraintTop_toBottomOf="@id/til_fullName"
         app:startIconDrawable="@drawable/ic_baseline_account_circle_24">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -47,30 +63,64 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilPassword"
+        android:id="@+id/til_userName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
+        android:hint="Your Username"
+        app:layout_constraintTop_toBottomOf="@+id/tilEmail"
+        app:startIconDrawable="@drawable/ic_baseline_account_circle_24"
+        tools:layout_editor_absoluteX="30dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_userName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:hint="Your password"
-        app:layout_constraintTop_toBottomOf="@id/tilTitle"
-        app:startIconDrawable="@drawable/ic_baseline_lock_24">
+        android:layout_marginTop="25dp"
+        app:layout_constraintTop_toBottomOf="@+id/til_userName"
+        app:startIconDrawable="@drawable/ic_baseline_lock_24"
+        tools:layout_editor_absoluteX="30dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_pass"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_confirm_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:hint="Your password"
+        app:layout_constraintTop_toBottomOf="@+id/tilPassword"
+        app:startIconDrawable="@drawable/ic_baseline_lock_24"
+        tools:layout_editor_absoluteX="30dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_confirm_password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
     <LinearLayout
-        android:id="@+id/llButonLogin"
+        android:id="@+id/llButonRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
         android:background="@drawable/btn_back_img"
         android:orientation="vertical"
         android:padding="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/tvsigin">
+        app:layout_constraintBottom_toTopOf="@+id/tvlogin">
 
         <TextView
             android:layout_width="wrap_content"
@@ -94,7 +144,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/tvsigin"
+        android:id="@+id/tvlogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"

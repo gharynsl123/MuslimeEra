@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.appteam.muslimeera.databinding.ActivityMainBinding
 import com.appteam.muslimeera.ui.BacaHadits
 import com.appteam.muslimeera.ui.BacaQuran
+import com.appteam.muslimeera.ui.ProfileActivity
 import com.appteam.muslimeera.ui.notes.NotesPage
 
 class MainActivity : AppCompatActivity() {
@@ -60,6 +61,9 @@ class MainActivity : AppCompatActivity() {
             btnBacaHadits.setOnClickListener {
                 val intent = Intent(this@MainActivity, BacaHadits::class.java)
                 startActivity(intent)
+            }
+            photoProfile.setOnClickListener {
+                startActivity(Intent(this@MainActivity, ProfileActivity::class.java))
             }
         }
     }

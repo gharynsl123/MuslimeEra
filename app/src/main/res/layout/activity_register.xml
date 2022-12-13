@@ -17,7 +17,7 @@
         android:textColor="@color/white"
         android:textSize="40sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvSubTitle"
@@ -34,8 +34,8 @@
         android:id="@+id/til_fullName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:hint="Your Username"
+        android:layout_marginTop="30dp"
+        android:hint="Your Full Name"
         app:layout_constraintTop_toBottomOf="@id/tvSubTitle"
         app:startIconDrawable="@drawable/ic_baseline_account_circle_24">
 
@@ -58,7 +58,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_email"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -83,8 +84,8 @@
         android:id="@+id/tilPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Your password"
         android:layout_marginTop="25dp"
+        android:hint="Your password"
         app:layout_constraintTop_toBottomOf="@+id/til_userName"
         app:startIconDrawable="@drawable/ic_baseline_lock_24"
         tools:layout_editor_absoluteX="30dp">
@@ -92,7 +93,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_pass"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -100,7 +102,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:hint="Your password"
+        android:hint="Confirm Your password"
         app:layout_constraintTop_toBottomOf="@+id/tilPassword"
         app:startIconDrawable="@drawable/ic_baseline_lock_24"
         tools:layout_editor_absoluteX="30dp">
@@ -108,7 +110,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_confirm_password"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -117,7 +120,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
-        android:background="@drawable/btn_back_img"
+        android:background="@android:color/darker_gray"
         android:orientation="vertical"
         android:padding="10dp"
         app:layout_constraintBottom_toTopOf="@+id/tvlogin">
@@ -154,7 +157,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/tvinfo" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

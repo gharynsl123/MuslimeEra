@@ -12,11 +12,17 @@ import androidx.viewpager2.widget.ViewPager2
 import com.appteam.muslimeera.R
 import com.appteam.muslimeera.databinding.ActivityOnBoardingBinding
 import com.appteam.muslimeera.ui.LoginActivity
+import com.appteam.muslimeera.ui.main.MainActivity
+import com.google.firebase.auth.FirebaseAuth
 
 
 class OnBoarding : AppCompatActivity() {
+
     private var _binding: ActivityOnBoardingBinding? = null
     private val binding get() = _binding as ActivityOnBoardingBinding
+
+    private var _auth : FirebaseAuth? = null
+    private val auth get() = _auth as FirebaseAuth
 
     private val onBoardingAdapter = OnBoardingItemAdapter(
         listOf(
@@ -39,12 +45,24 @@ class OnBoarding : AppCompatActivity() {
 
         supportActionBar?.hide()
 
+        _auth = FirebaseAuth.getInstance()
+
         _binding = ActivityOnBoardingBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setOnBoardingItems()
         setUpIndicator()
         setUpCurrentIndicator(0)
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        if (auth.currentUser != null){
+            Intent(this, MainActivity::class.java).also {
+                it.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+            }
+        }
     }
 
     private fun setOnBoardingItems() {
